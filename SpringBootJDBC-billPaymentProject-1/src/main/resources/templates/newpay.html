@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Payement</title>
+</head>
+<body>
+<body bgcolor="antiquewhite"></body>
+	<div align="center">
+		<h1>Create New Payment</h1>
+		<br />
+		<form action="#" th:action="@{/savepay}" th:object="${Billing}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{name}" /></td>
+				</tr>
+				<tr>
+					<td>Date:</td>
+					<td><input type="text" th:field="*{date}" /></td>
+				</tr>
+				<tr>
+					<td>Balance:</td>
+					<td><input type="text" th:field="*{balance}" /></td>
+				</tr>
+				<tr>
+					<td>Mobileno:</td>
+					<td><input type="text" th:field="*{mobileno}" /></td>
+				</tr>								
+				<tr>
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

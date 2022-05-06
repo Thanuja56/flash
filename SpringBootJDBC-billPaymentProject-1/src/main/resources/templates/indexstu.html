@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Student Information</title>
+
+</head>
+<body>
+<body bgcolor="skyblue"></body>
+
+       
+<div align="center">
+    <h1>Student Information</h1>
+    <a href="newstu">Create New Student</a>
+    
+    
+    <br/><br/>
+    <table border="1" cellpadding="10">
+   <img src="https://media3.giphy.com/media/1AHE70XtXjpblP44Kx/giphy.gif"
+    width="1200"
+    height="500"/>
+  
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Fathersname</th>
+                <th>Address</th>
+                <th>Fee</th>
+                <th>Mobileno</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${listStudents}">
+            	<td th:text="${student.id}">Student ID</td>
+                <td th:text="${student.name}">Name</td>
+                <td th:text="${student.fathersname}">Fathersname</td>
+                <td th:text="${student.address}">Address</td>
+                <td th:text="${student.fee}">Fee</td>
+                <td th:text="${student.mobileno}">Mobileno</td>
+                <td>
+                	<a th:href="@{'/editstu/' + ${student.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deletestu/' + ${student.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  
+</body>
+</html>

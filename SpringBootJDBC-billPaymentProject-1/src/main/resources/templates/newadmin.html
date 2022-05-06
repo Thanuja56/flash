@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="New.css">
+<title>Add Admin</title>
+</head>
+<body>
+<form action="#" th:action="@{/AddAdmin}" th:object="${admin}" method="POST">
+
+<table>
+<tr>
+<td>Name </td>
+<td><input type="text" th:field="*{username}"/></td>
+</tr>
+<tr>
+<td>Password </td>
+<td><input type="text" th:field="*{password}"/></td>
+</tr>
+</table>
+<input type="submit" value="Add"/>
+</form>
+</body>
+</html>

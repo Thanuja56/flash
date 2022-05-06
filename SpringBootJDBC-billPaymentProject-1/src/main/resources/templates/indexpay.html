@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Payment Details</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Payment List</h1>
+    
+    <a href="newpay">Create New Payement</a>
+      <br/><br/>
+    <img src="https://cdn5.vectorstock.com/i/1000x1000/03/54/hands-holding-mail-with-paying-bills-payment-vector-10450354.jpg"
+    width="1200"
+    height="500"/>
+    
+   
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Balance</th>
+                <th>Mobileno</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="billing : ${listBilling}">
+            	<td th:text="${billing.id}">Id</td>
+                <td th:text="${billing.name}">Name</td>
+                <td th:text="${billing.date}">Date</td>
+                <td th:text="${billing.balance}">Balance</td>
+                <td th:text="${billing.mobileno}">Mobileno</td>
+                <td>
+                	<a th:href="@{'/editpay/' + ${billing.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deletepay/' + ${billing.Id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

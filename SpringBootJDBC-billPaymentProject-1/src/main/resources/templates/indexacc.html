@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+    <h1>Accountant form</h1>
+    <a href="newacc">Create New Accountant form</a>
+      <br/><br/>
+     <img src="https://www.merchantmaverick.com/wp-content/uploads/2016/08/bigstock-ACCOUNTING-inscription-coming-324977827.jpg"
+   width="1200"
+    height="500"/>
+  
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>password</th>
+                <th>doj</th>
+                <th>dob </th>
+                <th>salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="accountant : ${listaccountants}">
+            	<td th:text="${accountant.id}">id</td>
+                <td th:text="${accountant.username}">username</td>
+                <td th:text="${accountant.password}">password</td>
+                <td th:text="${accountant.doj}">doj</td>
+                <td th:text="${accountant.dob}">dob</td>
+                <td th:text="${accountant.salary}">salary</td>
+                <td>
+                	<a th:href="@{'/editacc/' + ${accountant.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/deleteacc/' + ${accountant.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+
+
+</body>
+</html>

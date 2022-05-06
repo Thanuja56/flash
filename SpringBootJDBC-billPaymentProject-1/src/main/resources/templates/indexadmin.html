@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Details</title>
+</head>
+<body bgcolor="#69e354"></body>
+<body>
+<div align="center">
+<h1>Edit Admin</h1>
+<table border="1" cellpadding="10">
+<tr>
+<th>Admin Id</th>
+<th>Admin Name</th>
+<th>Role</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+<tr th:each="a : ${list}">
+<td th:text=${a.empId}>EmpId</td>
+<td th:text="${a.username}">Username</td>
+<td th:text="${a.role}">Role</td>
+<td>
+<a th:href="@{'/editadmin/' + ${a.empId}}">Edit</a>
+&nbsp;&nbsp;&nbsp;</td>
+<td><a th:href="@{'/deleteadmin/'+${a.empId}}">Delete</a>
+</td>
+</tr>
+</table>
+<a class="padding" href="newadmin">Add Admin</a>
+</div>
+</body>
+</html>
